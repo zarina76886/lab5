@@ -1,0 +1,53 @@
++-----------------------------------------------------------------------------------+
+|                                   registration                                    |
++-----------------------------------------------------------------------------------+
+
++-----------------------------------------------------------------------------------+
+|                                   Registration                                    |
++-----------------------------------------------------------------------------------+
+| - id: int                                                                         |
+| - fullName: String                                                                |
+| - email: String                                                                   |
+| - studentGroup: String                                                            |
+| - eventTitle: String                                                              |
++-----------------------------------------------------------------------------------+
+| + Registration(id: int, fullName: String, email: String,                          |
+|                studentGroup: String, eventTitle: String)                          |
+| + getId(): int                                                                    |
+| + getFullName(): String                                                           |
+| + getEmail(): String                                                              |
+| + getStudentGroup(): String                                                       |
+| + getEventTitle(): String                                                         |
+| + isValidFullName(name: String): boolean                                          |
+| + isValidEmail(email: String): boolean                                            |
+| + isValidGroup(group: String): boolean                                            |
+| + isValidEvent(choice: int): boolean                                              |
+| + getEventTitleByChoice(choice: int): String                                      |
+| + toString(): String                                                              |
++-----------------------------------------------------------------------------------+
+                                          ▲
+                                          │ 1..* (хранит список)
+                                          │
++-----------------------------------------------------------------------------------+
+|                               RegistrationManager                                 |
++-----------------------------------------------------------------------------------+
+| - registrations: ArrayList<Registration>                                          |
+| - nextId: int                                                                     |
++-----------------------------------------------------------------------------------+
+| + addRegistration(fullName: String, email: String,                                |
+|                   studentGroup: String, eventChoice: int): void                   |
+| + displayAll(): void                                                              |
+| + findById(id: int): void                                                         |
+| + deleteById(id: int): void                                                       |
+| + displayByEvent(eventChoice: int): void                                          |
++-----------------------------------------------------------------------------------+
+                                          ▲
+                                          │ использует (uses)
+                                          │
++-----------------------------------------------------------------------------------+
+|                                       Main                                        |
++-----------------------------------------------------------------------------------+
+|                                                                                   |
++-----------------------------------------------------------------------------------+
+| + main(args: String[]): void                                                      |
++-----------------------------------------------------------------------------------+
